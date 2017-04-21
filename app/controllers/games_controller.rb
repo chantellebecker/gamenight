@@ -1,7 +1,7 @@
 class GamesController < ApplicationController
 	before_action :set_game, only: [:show, :edit, :update, :destroy]
 	def new
-      @game = Game.new
+        @game = Game.new
     end
 
     def show
@@ -18,14 +18,14 @@ class GamesController < ApplicationController
 	def create
 	    @game = Game.new(game_params)
 
-		    respond_to do |format|
-		      if @game.save
-		        format.html { redirect_to @game, notice: 'Game was successfully created.' }
-		      else
-		        format.html { render :new }
-		      end
-		    end
-	  	end
+	    respond_to do |format|
+	      if @game.save
+	        format.html { redirect_to @game, notice: 'Game was successfully created.' }
+	      else
+	        format.html { render :new }
+	      end
+	    end
+	end
 	
 
   	def update
@@ -46,14 +46,14 @@ class GamesController < ApplicationController
 	end
 end
 
-  	private
+private
+	def game_params
+	    params.require(:game).permit(:games_type, :category, :weight, :age, :players, :table_size, :title, :description)
+	end
 
-		def game_params
-		    params.require(:game).permit(:games_type, :category, :weight, :age, :players, :table_size, :title, :description)
-		end
-	   	def set_game
-	    	@game = Game.find(params[:id])
-		end
+	def set_game
+		@game = Game.find(params[:id])
+	end
 	
 
 

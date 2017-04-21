@@ -17,14 +17,14 @@ class VenuesController < ApplicationController
 	def create
 	    @venue = Venue.new(venue_params)
 
-		    respond_to do |format|
-		      if @venue.save
-		        format.html { redirect_to @venue, notice: 'Venue was successfully created.' }
-		      else
-		        format.html { render :new }
-		      end
-		    end
-	  	end
+	    respond_to do |format|
+	      if @venue.save
+	        format.html { redirect_to @venue, notice: 'Venue was successfully created.' }
+	      else
+	        format.html { render :new }
+	      end
+	    end
+	end
 	
 
   	def update
@@ -46,7 +46,6 @@ class VenuesController < ApplicationController
 end
 
   	private
-
 		def venue_params
 		    params.require(:venue).permit(:name, :address, :phone, :website, :venues_type)
 		end

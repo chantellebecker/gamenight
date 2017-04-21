@@ -4,7 +4,7 @@ class AttendingsController < ApplicationController
   def create
     @event = Event.find(params[:event_id])
     @event.attendings.where(user_id: current_user.id).first_or_create
-      redirect_to request.referrer, notice: "You're attending this event!"
+    redirect_to request.referrer, notice: "You're attending this event!"
   end
 
   def destroy
