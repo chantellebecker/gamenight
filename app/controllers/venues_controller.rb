@@ -7,9 +7,9 @@ class VenuesController < ApplicationController
     def show
     end
 
-    def index
+	def index
     	@v = Venue.all
-  	end
+	end
 
   	def edit
   	end
