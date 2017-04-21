@@ -2,7 +2,7 @@ class VenuesController < ApplicationController
 	before_action :set_venue, only: [:show, :edit, :update, :destroy]
 	def new
       @venue = Venue.new
-    end
+	end
 
     def show
     end
@@ -34,7 +34,7 @@ class VenuesController < ApplicationController
 	     	else
 	          format.html { render :edit }
 	      	end
-    	end
+	    end
   	end
 
   	def destroy
