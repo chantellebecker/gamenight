@@ -2,7 +2,7 @@ class EventsController < ApplicationController
 	before_action :set_event, only: [:show, :edit, :update, :destroy]
 	def new
     	@event = Event.new
-    end
+    	end
 
     def show
     end
@@ -14,7 +14,7 @@ class EventsController < ApplicationController
 		  else
 		    @e = Event.all.order('created_at DESC')
 		  end
-  	end
+  		end
 
   	def edit
   	end
