@@ -1,14 +1,14 @@
 class VenuesController < ApplicationController
 	before_action :set_venue, only: [:show, :edit, :update, :destroy]
 	def new
-      	    @venue = Venue.new
+      	@venue = Venue.new
 	end
 
-        def show
-    	end
+    def show
+    end
 
 	def index
-    	    @v = Venue.all
+    	@v = Venue.all
 	end
 
   	def edit
